@@ -1,4 +1,4 @@
-package com.maveric.accountservice.controller;
+package com.maveric.accountservice.conroller;
 
 import com.maveric.accountservice.dto.ErrorDto;
 import org.springframework.boot.web.servlet.error.ErrorController;

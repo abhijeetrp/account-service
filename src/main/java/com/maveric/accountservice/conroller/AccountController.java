@@ -1,4 +1,4 @@
-package com.maveric.accountservice.controller;
+package com.maveric.accountservice.conroller;
 
 import com.maveric.accountservice.dto.AccountDto;
 import com.maveric.accountservice.dto.BalanceDto;
@@ -34,7 +34,7 @@ public class AccountController {
     UserServiceConsumer userServiceConsumer;
 
     @GetMapping("customers/{customerId}/account")
-    public ResponseEntity<List<AccountDto>> getAccounts(@PathVariable String customerId,@RequestParam(defaultValue = "0") Integer page,
+    public ResponseEntity<List<AccountDto>> getAccounts(@PathVariable String customerId, @RequestParam(defaultValue = "0") Integer page,
                                                         @RequestParam(defaultValue = "10") Integer pageSize) {
         List<AccountDto> accountDtoResponse = accountService.getAccounts(page,pageSize);
         return new ResponseEntity<>(accountDtoResponse, HttpStatus.OK);
