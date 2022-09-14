@@ -1,19 +1,27 @@
 package com.maveric.accountservice.model;
 
 
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.maveric.accountservice.constants.Type;
+import lombok.*;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Data
+import java.sql.Types;
+import java.time.LocalDateTime;
+
+@Getter
+@Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
 @Document(collection = "account")
 public class Account
 {
-    public String customerId;
-    public String type;
+    @Id
+    private String _id;
+    private String customerId;
+    private Type type;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 
 }
